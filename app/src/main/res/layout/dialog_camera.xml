@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp">
+
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="89dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_camera"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/shape_personal_camera_dialog_round_bg"
+                android:onClick="@{clickListener}"
+                android:text="拍摄"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+            <View
+                style="@style/custom_horizonal_splite"/>
+
+            <TextView
+                android:id="@+id/btn_select"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_personal_camera_dialog_round_bg"
+                android:gravity="center"
+                android:onClick="@{clickListener}"
+                android:text="从手机相册选择"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

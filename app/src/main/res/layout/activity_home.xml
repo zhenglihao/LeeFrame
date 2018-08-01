@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  tools:context="com.xinshengyitou.client.mc.ui.activity.HomeActivity">
+
+        <com.example.lee.leeframe.widget.NoScrollViewPager
+            android:id="@+id/vp_fragments"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </com.example.lee.leeframe.widget.NoScrollViewPager>
+
+        <View style="@style/custom_horizonal_splite"/>
+
+        <com.chaychan.library.BottomBarLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+            <com.chaychan.library.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:iconNormal="@mipmap/icon_home_1"
+                app:iconSelected="@mipmap/icon_home_1_in"
+                app:itemMarginTop="4dp"
+                app:itemText="标签1"
+                app:itemTextSize="@dimen/bottom_item_text_size"
+                app:textColorNormal="@color/black"
+                app:textColorSelected="@color/colorPrimary"/>
+
+            <com.chaychan.library.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:iconNormal="@mipmap/icon_home_2"
+                app:iconSelected="@mipmap/icon_home_2_in"
+                app:itemMarginTop="4dp"
+                app:itemText="标签2"
+                app:itemTextSize="@dimen/bottom_item_text_size"
+                app:textColorNormal="@color/black"
+                app:textColorSelected="@color/colorPrimary"/>
+
+            <com.chaychan.library.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:iconNormal="@mipmap/icon_home_3"
+                app:iconSelected="@drawable/icon_home_3_in"
+                app:itemMarginTop="4dp"
+                app:itemText="标签3"
+                app:itemTextSize="@dimen/bottom_item_text_size"
+                app:textColorNormal="@color/black"
+
+                app:textColorSelected="@color/colorPrimary"/>
+
+            <com.chaychan.library.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:iconNormal="@mipmap/icon_home_4"
+                app:iconSelected="@mipmap/icon_home_4_in"
+                app:itemMarginTop="4dp"
+                app:itemText="标签4"
+                app:itemTextSize="@dimen/bottom_item_text_size"
+                app:textColorNormal="@color/black"
+                app:textColorSelected="@color/colorPrimary"/>
+
+            <com.chaychan.library.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:iconNormal="@mipmap/icon_home_5"
+                app:iconSelected="@mipmap/icon_home_5_in"
+                app:itemMarginTop="4dp"
+                app:itemText="标签5"
+                app:itemTextSize="@dimen/bottom_item_text_size"
+                app:textColorNormal="@color/black"
+                app:textColorSelected="@color/colorPrimary"/>
+
+
+        </com.chaychan.library.BottomBarLayout>
+
+    </LinearLayout>
+
+</layout>

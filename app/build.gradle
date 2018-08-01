@@ -1,0 +1,155 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.lee.leeframe"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+         multiDexEnabled true  // 解决65k问题
+    }
+
+    signingConfigs {  // 签名配置
+
+        debug {
+            storeFile file(KEYSTORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEYPASSWORD
+        }
+
+        release {
+            storeFile file(KEYSTORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEYPASSWORD
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    if (variant.buildType.name.equals('release')) {
+                        def releaseApkName = "lee_${defaultConfig.versionName}-${getDate()}.apk"
+                        output.outputFileName = releaseApkName
+                    }
+                }
+            }
+        }
+    }
+
+
+    buildTypes {
+
+        release {
+            //启用代码混淆
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            //移除无用的Resource
+            shrinkResources false
+            //资源文件对齐
+            zipAlignEnabled false
+        }
+
+        debug {
+
+            //启用代码混淆
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+    }
+
+    /* 设置 databinding */
+    dataBinding {
+        enabled = true
+    }
+
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:support-v4:24.2.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // retrofit + rxjava 全家桶
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
+    compile 'com.tamic:browse:1.0.0'
+
+    implementation 'com.android.support:design:27.0.2'
+
+    // 快速BaseAdapter
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    // 圆形图像
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //  倒计时控件
+    compile 'com.github.iwgang:countdownview:2.1.6'
+    // 图片选择器
+    compile 'com.lzy.widget:imagepicker:0.6.1'
+    // 图片缓存
+    compile 'com.github.bumptech.glide:glide:4.6.1'
+     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    // XRecyclerView
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    // 底部控件栏
+    compile 'com.github.chaychan:BottomBarLayout:1.1.2'
+    // 星星评分条
+    compile 'com.hedgehog.ratingbar:app:1.1.2'
+    // 垂直跑马灯
+    compile 'com.xiaosu:VerticalRollingTextView:2.0.9'
+    // 拼音
+    compile 'com.github.SilenceDut:jpinyin:v1.0'
+    // 日历
+    compile 'com.haibin:calendarview:3.3.0'
+    // 二维码
+    compile 'com.google.zxing:core:3.2.1'
+    // 文本展开与折叠
+    implementation 'com.timqi.collapsibletextview:library:1.1.2'
+    //知乎图片选择 https://github.com/zhihu/Matisse
+    // implementation 'com.zhihu.android:matisse:0.4.3'
+    // 轮播图
+    compile 'com.youth.banner:banner:1.4.10'
+    // EventBus
+    compile 'org.greenrobot:eventbus:3.1.1'
+    // 富文本
+    compile 'jp.wasabeef:richeditor-android:1.2.2'
+    compile 'com.orhanobut:logger:1.15'
+
+
+    // 微信支付
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
+
+
+    implementation files('libs/alipaySdk-20180403.jar')
+    implementation files('libs/hyphenatechat_3.4.2.jar')
+    implementation files('libs/umeng-common-1.5.3.jar')
+    implementation files('libs/umeng-share-core-6.9.2.jar')
+    implementation files('libs/umeng-share-QQ-simplify-6.9.2.jar')
+    implementation files('libs/umeng-share-sina-simplify-6.9.2.jar')
+    implementation files('libs/umeng-share-wechat-full-6.9.2.jar')
+    implementation files('libs/umeng-sharetool-6.9.2.jar')
+}
+
+//获取时间戳
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+

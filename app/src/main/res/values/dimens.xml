@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="home_horizon_padding">12dp</dimen>
+
+    <dimen name="common_button_size">15sp</dimen>
+    <dimen name="common_title_size">18sp</dimen>
+    <dimen name="common_font_size">14sp</dimen>
+    <dimen name="common_smail_font_size">12sp</dimen>
+    <dimen name="common_edit_font_size">16sp</dimen>
+
+    <dimen name="bottom_item_text_size">12sp</dimen>
+
+
+    <dimen name="flex_item_text_size">12sp</dimen>
+
+
+    <dimen name="top_bar_size">48dp</dimen>
+    <dimen name="top_bar_icon_size">36dp</dimen>
+    <dimen name="top_bar_icon_padding">8dp</dimen>
+
+
+    <dimen name="activity_horizontal_padding">16dp</dimen>
+    <dimen name="activity_vertical_padding">16dp</dimen>
+
+    <dimen name="design_fab_size_normal" tools:ignore="PrivateResource">48dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="filter_bar_height">32dp</dimen>
+
+
+    <dimen name="adviser_home_page_horizon_margin">14dp</dimen>
+
+    <dimen name="pickerview_textsize">20sp</dimen>
+    <!-- 顶部按钮栏高度 -->
+    <dimen name="pickerview_topbar_height">44dp</dimen>
+
+    <!-- 顶部按钮padding -->
+    <dimen name="pickerview_topbar_padding">20dp</dimen>
+
+    <!-- 顶部按钮文字大小 -->
+    <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
+    <dimen name="pickerview_topbar_title_textsize">18sp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_margin_5">5dp</dimen>
+    <dimen name="activity_margin_10">10dp</dimen>
+    <dimen name="activity_margin_16">16dp</dimen>
+
+    <dimen name="text_size_14">14dp</dimen>
+    <dimen name="text_size_16">16dp</dimen>
+    <dimen name="text_size_18">18dp</dimen>
+    <dimen name="text_size_20">20dp</dimen>
+
+    <dimen name="grid_expected_size">120dp</dimen>
+
+</resources>
